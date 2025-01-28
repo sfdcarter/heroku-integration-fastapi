@@ -1,0 +1,52 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "FastAPI Heroku Integration App",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/accounts": {
+            "post": {
+                "summary": "List Accounts",
+                "operationId": "ListAccounts",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "title": "AccountIdToName"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/info": {
+            "post": {
+                "summary": "Info",
+                "operationId": "Info",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "username": {"type": "string"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
