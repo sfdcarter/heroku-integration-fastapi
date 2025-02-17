@@ -16,6 +16,7 @@ class ClientUserContext(BaseModel):
 
 class ClientContextModel(BaseModel):
     model_config = ConfigDict(alias_generator=to_camel)
+    
     request_id: str = Field()
     access_token: str = Field()
     api_version: str = Field()

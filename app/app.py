@@ -14,3 +14,6 @@ async def list_accounts(sf: DefaultConnection) -> dict[str, str]:
 async def info(client: ClientContext) -> dict[str,str]:
     return {"username": client.user_context.username}
 
+@app.post("/options")
+async def opts() -> list[str]:
+    return ["heat pump"]

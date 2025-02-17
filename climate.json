@@ -1,0 +1,68 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/options": {
+            "post": {
+                "summary": "learn about possible climate options for your home ",
+                "description": "",
+                "operationId": "ClimateOptions",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "year_built": {
+                                        "type": "integer"
+                                    },
+                                    "heat": {
+                                        "type": "string",
+                                        "enum": [
+                                            "forced air - gas",
+                                            "forced air - electric",
+                                            "baseboard - electric",
+                                            "heat pump"
+                                        ]
+                                    },
+                                    "home_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "single family",
+                                            "manufactured home",
+                                            "townhouse/duplex/multifamily"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "suggestions",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "suggestions": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "default": "heat pump"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "info": {
+        "title": "Heroku Clean Homes",
+        "version": "0.1"
+    }
+}
