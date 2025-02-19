@@ -16,4 +16,4 @@ async def info(client: ClientContext) -> dict[str,str]:
 
 @app.post("/options", operation_id="ClimateOptions")
 async def opts():
-    return {"suggestions":["heat pump"]}
+    return {"suggestions":[{"heat pump":2000}, {"basement insulation": 1000}]}
